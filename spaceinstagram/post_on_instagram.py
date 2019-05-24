@@ -33,12 +33,8 @@ def main():
     posted_photos = get_posted_pictures_list()
     for pic in list_of_photos:
         if pic not in posted_photos:
-            try:
-                post_photo(pic)
-            except PermissionError:
-                raise PermissionError
-            finally:
-                update_posted_pictures_list(pic, posted_photos)
+            post_photo(pic)
+            update_posted_pictures_list(pic, posted_photos)
 
 
    
