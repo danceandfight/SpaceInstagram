@@ -10,3 +10,5 @@ $ cat .gitignore
 !requirements.txt
 spacespace4x.checkpoint
 *.log
+/spaceinstagram/images
+*.pyc

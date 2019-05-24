@@ -7,11 +7,11 @@ from fetch_spacex import download_picture
 
 def fetch_hubble_pictures(url):
     response = requests.get(url)
+    response.raise_for_status()
     list_of_ids = [link['id'] for link in response.json()]
     logging.basicConfig(level = logging.DEBUG, filename = u'hubblelog.log')
     for id in list_of_ids:
         url = 'http://hubblesite.org/api/v3/image/{}'.format(id)
-        response = requests.get(url)
         link = response.json()['image_files'][-1]['file_url']
         filename = '{}{}'.format(id, os.path.splitext(link)[-1])
         download_picture(link, filename)
