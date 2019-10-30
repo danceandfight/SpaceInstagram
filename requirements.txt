@@ -24,6 +24,6 @@ tinytag==1.0.0
 tqdm==4.31.1
 urllib3==1.24.1
 virtualenv==15.1.0
-Werkzeug==0.14.1
+Werkzeug==0.15.3
 xlrd==1.1.0
 instabot==0.33.0
